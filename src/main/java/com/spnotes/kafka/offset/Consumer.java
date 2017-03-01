@@ -74,11 +74,11 @@ public class Consumer {
                         }else if(startingOffset ==0){
                             System.out.println("Setting offset to begining");
 
-                            kafkaConsumer.seekToBeginning(topicPartition);
+                            kafkaConsumer.seekToBeginning(partitions);
                         }else if(startingOffset == -1){
                             System.out.println("Setting it to the end ");
 
-                            kafkaConsumer.seekToEnd(topicPartition);
+                            kafkaConsumer.seekToEnd(partitions);
                         }else {
                             System.out.println("Resetting offset to " + startingOffset);
                             kafkaConsumer.seek(topicPartition, startingOffset);
